@@ -1,3 +1,6 @@
-import { createBoot } from "react-dom/client;"
+import { createRoot } from "react-dom/client";
+import App from "./App";
 
-const root = createBoot(document.querrySelector("#root"))
+const root = createRoot(document.getElementById("root"));
+
+root.render(<App />);
