@@ -1,9 +1,27 @@
-import React from 'react'
+import React from 'react';
+import GridItem from "../GridItem";
+import * as C from "./styles";
 
-const index = () => {
+const Grid = ({ itens, setItens }) => {
+  
   return (
-    <div>index</div>
-  )
-}
+    <C.Table>
+      <C.Thead>
+        <C.Tr>
+          <C.th width={40}>Descrição</C.th>
+          <C.th width={40}>Valor</C.th>
+          <C.th width={10} alignCenter>Tipo</C.th>
+          <C.th width={10}></C.th>
 
-export default index
+        </C.Tr>
+      </C.Thead>
+      <C.Tbody>
+        {itens?.map((item, index) => (
+          <GridItem hey={index} item={item} />
+        ))}
+      </C.Tbody>
+    </C.Table>
+  );
+};
+
+export default Grid
